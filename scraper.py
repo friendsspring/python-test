@@ -17,7 +17,10 @@ def run():
 
         # ページ内の任意の要素を取得
         heading = page.query_selector('h1')
-        print("Heading Text:", heading.inner_text())
+        if heading:
+            print("Heading Text:", heading.inner_text())
+        else:
+            print("Heading not found")
 
         # スクリーンショットを撮る
         page.screenshot(path='screenshot.png')
